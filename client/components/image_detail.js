@@ -1,10 +1,11 @@
-import React from 'react';
+import React , { Component, PropTypes } from 'react';
+import ImageScore from './image_score';
 
 const ImageDetail = (props) => {
     // props.image => this is image object
     // props.image.title
     // props.image.link
-    return (
+  return (
         <li className="media list-group-item">
             <div className="media-left">
                 <img src={props.image.link} />
@@ -13,6 +14,8 @@ const ImageDetail = (props) => {
                 <h4 className="media-heading">
                     {props.image.title}
                 </h4>
+                <p>{props.image.description}</p>
+                <ImageScore ups={props.image.ups} downs={props.image.downs} />
             </div>
         </li>
     );
